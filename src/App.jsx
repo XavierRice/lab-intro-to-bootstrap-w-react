@@ -3,8 +3,12 @@ import { useState } from "react";
 
 //COMPONENTS//
 import Cards from "../Components/CardsDiv";
+import Footer from "../Components/Footer";
+import RightTable from "../Components/RightTable";
+import NavBar from "../Components/NavBar";
 
-console.log(postData);
+
+
 
 
 function App() {
@@ -13,15 +17,19 @@ function App() {
   return (
 
 
-
-    <Cards data={postData}/>
-
-
+    <>
+    <NavBar/>
+      <RightTable postData={postData} />
+      <Footer />
+    </>
 
   )
 }
 
 export default App;
+
+//<Cards data={postData}/>
+//<RightTable postData={postData}/>
 
 
 /*  {

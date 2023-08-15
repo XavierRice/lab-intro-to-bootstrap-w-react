@@ -5,25 +5,20 @@ import Cards from "./Cards";
 const CardsDiv = ({ data }) => {
 
   const cardsToRender = data.map((spot) =>
-
-    <Cards spot={spot} />
-
+    <div className="card-group">
+      <Cards spot={spot} />
+    </div>
   )
-
-
 
   return (
 
-    <div className="card col" style={{ width: "18rem" }}>
-
-      {cardsToRender}
-
+    <div className="row row-cols-3" >
+      
+        {cardsToRender}
     </div>
 
 
   )
-
-
 
 };
 

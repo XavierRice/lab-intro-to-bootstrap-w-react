@@ -12,24 +12,29 @@ export default function Cards({ spot }) {
 
         postButton ? (
 
-            <>
-                <div className="card-body">
-                    <img src={`images.${spot.location}`} className="card-img-top" alt={spot.location} />
-                    <h5 className="card-title">{spot.title}</h5>
-                    <p className="card-text">{spot.content}</p>
-                    <button className="btn btn-primary" onClick={(se) => setPostButton(!postButton)}>{postButton ? "Go to post" : "close"}</button>
+           
+                <div className="card">
+                    <img src= {images[`${spot.location}`]} className="card-img-top" alt={spot.location} />
+                    <div className="card-body">
+                        <h5 className="card-title">{spot.title}</h5>
+                        <p className="card-text">{spot.content}</p>
+                        <button className="btn btn-primary" onClick={(se) => setPostButton(!postButton)}>{postButton ? "Go to post" : "close"}</button>
+                    </div>
                 </div>
-            </>
-
+           
 
         ) : (
-
-            <div className="card-body">
-                <img src={`images.${spot.location}`} className="card-img-top" alt={spot.location} />
-                <h5 className="card-title">{spot.title}</h5>
-                <h2>{spot.location}</h2>
-                <button className="btn btn-primary" onClick={(se) => setPostButton(!postButton)}>{postButton ? "Close" : "Go to Post"}</button>
-            </div>
+            
+                <div className="card">
+                    <img src={images[`${spot.location}`]} className="card-img-top" alt={spot.location} />
+                    <div className="card-body">
+                        <h5 className="card-title">{spot.title}</h5>
+                        <h2>{spot.location}</h2>
+                        <p className="card-text text-truncate">{spot.content}</p>
+                        <button className="btn btn-primary" onClick={(se) => setPostButton(!postButton)}>{!postButton ? "Go to Post" : "Close"}</button>
+                    </div>
+                </div>
+            
         )
     )
 
