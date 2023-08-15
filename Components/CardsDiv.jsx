@@ -1,28 +1,35 @@
-import postData from "./data/posts.json";
-import { useState } from "react";
-
-//COMPONENTS//
-import Cards from "../Components/CardsDiv";
-
-console.log(postData);
+import Cards from "./Cards";
 
 
-function App() {
+
+const CardsDiv = ({ data }) => {
+
+  const cardsToRender = data.map((spot) =>
+
+    <Cards spot={spot} />
+
+  )
+
 
 
   return (
 
+    <div className="card col" style={{ width: "18rem" }}>
 
+      {cardsToRender}
 
-    <Cards data={postData}/>
-
+    </div>
 
 
   )
-}
 
-export default App;
 
+
+};
+
+
+
+export default CardsDiv;
 
 /*  {
     "id": "63ebd220e80158f7948b8cb4",
